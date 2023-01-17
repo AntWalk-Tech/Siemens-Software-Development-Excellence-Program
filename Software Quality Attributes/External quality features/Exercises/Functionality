@@ -1,0 +1,34 @@
+// Exercise: Refactor the following code to improve its functionality
+
+
+class A
+{
+    public void ProcessOrder(Order order)
+    {
+        // code to process the order
+    }
+}
+
+
+// Solution 
+
+class A
+{
+    public void ProcessOrder(Order order, bool sendConfirmation)
+    {
+        // code to process the order
+        if (sendConfirmation)
+        {
+            SendConfirmation(order);
+        }
+    }
+
+    private void SendConfirmation(Order order)
+    {
+        // code to send email confirmation
+    }
+}
+
+
+//In this example, I've refactored the code to improve its functionality 
+//by adding a new parameter to the method, which allows to send an email confirmation as an optional feature.

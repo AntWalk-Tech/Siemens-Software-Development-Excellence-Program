@@ -1,0 +1,29 @@
+class ShoppingCart
+{
+    public void AddItem(string productId, int quantity)
+    {
+        // code to add item to cart
+    }
+
+    public void RemoveItem(string productId)
+    {
+        // code to remove item from cart
+    }
+
+    public decimal CalculateTotal()
+    {
+        // code to calculate total price of cart items
+    }
+}
+
+
+// Internal Quality Issues:
+
+// The method names are not descriptive and do not follow naming conventions.
+// The method does not handle the case when the item does not exist in the cart.
+// The method does not validate the input parameters.
+
+// External Quality Issues:
+
+// The method does not provide feedback to the user in case of an error.
+// The method does not handle the case when the cart is empty.

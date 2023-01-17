@@ -1,0 +1,16 @@
+void ProcessOrder(Order order)
+{
+    // code A
+    // code B
+    // code C
+    // code D
+    // code E
+    // code F
+    // code G
+    // code H
+    // code I
+}
+
+
+//In this example, the method ProcessOrder is too long, it has many lines of code and it's difficult to understand the purpose of the method, this is considered as a code smell.
+

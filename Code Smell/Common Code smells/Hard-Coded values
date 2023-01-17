@@ -1,0 +1,9 @@
+void CalculateTax()
+{
+    decimal tax = 0.1;
+    decimal total = 100 * tax;
+}
+
+
+// In this example, the value of the tax 0.1 is hard-coded, this is considered as a code smell, this value should be read from a configuration file.
+

@@ -1,0 +1,17 @@
+// Bad example
+public void ProcessOrders(List<Order> orders)
+{
+    foreach (var order in orders)
+    {
+        // code to process the order
+    }
+}
+
+// Good example
+public void ProcessOrders(List<Order> orders)
+{
+    Parallel.ForEach(orders, order =>
+    {
+        // code to process the order
+    });
+}

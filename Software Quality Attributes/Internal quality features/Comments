@@ -1,0 +1,29 @@
+// Bad example
+public decimal CalculateTotal(List<OrderItem> items)
+{
+    decimal total = 0;
+    for (int i = 0; i < items.Count; i++)
+    {
+        total += items[i].Price * items[i].Quantity;
+    }
+    return total;
+}
+
+//
+// Good example
+
+/// <summary>
+/// Calculates the total price of a given list of order items
+/// </summary>
+/// <param name="items">List of order items</param>
+/// <returns>Total price</returns>
+public decimal CalculateTotal(List<OrderItem> items)
+{
+    decimal total = 0;
+    for (int i = 0; i < items.Count; i++)
+    {
+        // Adding up the price of each item with its quantity
+        total += items[i].Price * items[i].Quantity;
+    }
+    return total;
+}

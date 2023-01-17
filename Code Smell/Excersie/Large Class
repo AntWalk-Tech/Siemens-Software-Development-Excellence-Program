@@ -1,0 +1,10 @@
+class OrderProcessor
+{
+    public void ValidateOrder() { /* code */ }
+    public void CalculateTotal() { /* code */ }
+    public void ApplyDiscounts() { /* code */ }
+    public void CalculateTax() { /* code */ }
+    public void CalculateShipping() { /* code */ }
+    public void SaveOrder() { /* code */ }
+    public void SendEmailConfirmation() { /* code */ }
+}

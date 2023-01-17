@@ -1,0 +1,30 @@
+class OrderProcessor
+{
+    public void ValidateOrder() { /* code */ }
+    public void CalculateTotal() { /* code */ }
+    public void ApplyDiscounts() { /* code */ }
+    public void CalculateTax() { /* code */ }
+    public void CalculateShipping() { /* code */ }
+    public void SaveOrder() { /* code */ }
+    public void SendEmailConfirmation() { /* code */ }
+}
+
+
+//Refactored
+
+class OrderValidator
+{
+    public void ValidateOrder() { /* code */ }
+}
+class OrderCalculator
+{
+    public void CalculateTotal() { /* code */ }
+    public void ApplyDiscounts() { /* code */ }
+    public void CalculateTax() { /* code */ }
+    public void CalculateShipping() { /* code */ }
+}
+class OrderSaver
+{
+    public void SaveOrder() { /* code */ }
+    public void SendEmailConfirmation() { /* code */ }
+}

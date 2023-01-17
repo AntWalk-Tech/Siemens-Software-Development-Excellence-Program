@@ -1,0 +1,23 @@
+class ProductListing
+{
+    public List<Product> GetProducts()
+    {
+        // code to retrieve products from database
+    }
+
+    public void DisplayProducts(List<Product> products)
+    {
+        // code to display products on page
+    }
+}
+
+// Internal Quality Issues:
+
+// The method names are not descriptive and do not follow naming conventions.
+// The method does not handle the case when there are no products to display.
+// The method does not validate the input parameters.
+
+// External Quality Issues:
+
+// The method does not provide feedback to the user in case of an error.
+// The method does not handle the case when the user has not logged in.

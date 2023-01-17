@@ -1,0 +1,40 @@
+// Bad example
+public class OrderProcessor
+{
+    private readonly string _connectionString = "server=localhost;database=orders;uid=sa;pwd=password";
+
+    public void ProcessOrder(Order order)
+    {
+        // code to process the order
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            // code to save the order to the database
+        }
+    }
+}
+
+// Good example
+public class OrderProcessor
+{
+    private readonly string _connectionString;
+
+    public OrderProcessor(string connectionString)
+    {
+        _connectionString = connectionString;
+    }
+
+    public void ProcessOrder(Order order)
+    {
+        // code to process the order
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            // code to save the order to the database
+        }
+    }
+}
+
+//The bad example hardcodes the connection string, 
+//which contains sensitive information like the username and password, 
+//in the source code. This could lead to security issues if the source code is compromised or viewed by unauthorized parties. 
+//The good example takes the connection string as a parameter and it's passed to the class when it's instantiated,
+// this way the sensitive information is not stored in the source code, making it more secure.

@@ -1,0 +1,14 @@
+void ProcessOrder(Order order)
+{
+    decimal total = 0;
+    decimal tax = 0;
+    decimal shipping = 0;
+    decimal discount = 0;
+
+    // code
+    // code
+    // code
+    // code
+}
+
+//In this example, the variables tax, shipping and discount are declared but not used, this is considered as a code smell.

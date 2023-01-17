@@ -1,0 +1,13 @@
+void ProcessOrder(Order order)
+{
+    if (ValidateOrder(order))
+    {
+        decimal total = CalculateTotal(order);
+        decimal discount = ApplyDiscounts(order);
+        decimal tax = CalculateTax(order);
+        decimal shipping = CalculateShipping(order);
+
+        SaveOrder(order);
+        SendEmailConfirmation(order);
+    }
+}

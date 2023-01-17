@@ -1,0 +1,22 @@
+class CustomerArea
+{
+    public void AddToCart(string productId, int quantity)
+    {
+        // code to add product to cart
+    }
+
+    public void ViewCart()
+    {
+        // code to display cart contents
+    }
+}
+
+
+//Internal Quality Issues:
+//The method names are not descriptive and do not follow naming conventions.
+//The method does not have any validation for the input parameters.
+
+
+//External Quality Issues:
+//The method does not provide feedback to the user in case of an error.
+//The method does not handle the case when the cart is empty.

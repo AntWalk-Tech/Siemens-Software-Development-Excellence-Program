@@ -1,0 +1,15 @@
+class OrderProcessor
+{
+    // properties
+    // method A
+    // method B
+    // method C
+    // method D
+    // method E
+    // method F
+    // method G
+    // method H
+}
+
+//In this example, the class OrderProcessor has many methods, it's difficult to understand the responsibility of the class, this is considered as a code smell.
+

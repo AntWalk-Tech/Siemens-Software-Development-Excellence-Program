@@ -1,0 +1,29 @@
+void ProcessOrder(Order order)
+{
+    if (order.Amount > 100 && order.Amount < 200)
+    {
+        // code to apply discount
+    }
+}
+
+
+// Refactored
+
+bool IsDiscountEligible(Order order)
+{
+    return order.Amount > 100 && order.Amount < 200;
+}
+
+void ProcessOrder(Order order)
+{
+    if (IsDiscountEligible(order))
+    {
+        ApplyDiscount(order);
+    }
+}
+
+void ApplyDiscount(Order order)
+{
+    // code to apply discount
+}
+

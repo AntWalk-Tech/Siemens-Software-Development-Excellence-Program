@@ -1,0 +1,27 @@
+void ProcessOrder(Order order)
+{
+    // code to validate order
+    // code to calculate total
+    // code to apply discounts
+    // code to calculate tax
+    // code to calculate shipping
+    // code to save order to database
+    // code to send email confirmation
+}
+
+
+// Refactored
+
+void ProcessOrder(Order order)
+{
+    if (ValidateOrder(order))
+    {
+        decimal total = CalculateTotal(order);
+        decimal discount = ApplyDiscounts(order);
+        decimal tax = CalculateTax(order);
+        decimal shipping = CalculateShipping(order);
+
+        SaveOrder(order);
+        SendEmailConfirmation(order);
+    }
+}

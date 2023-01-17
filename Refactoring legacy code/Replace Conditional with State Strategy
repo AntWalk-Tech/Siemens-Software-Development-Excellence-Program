@@ -1,0 +1,39 @@
+class OrderProcessor
+{
+    public void ProcessOrder(Order order)
+    {
+        if (order.IsPremium)
+        {
+            // code to process premium order
+        }
+        else
+        {
+            // code to process regular order
+        }
+    }
+}
+
+
+
+// Refactored:
+
+abstract class OrderProcessor
+{
+    public abstract void ProcessOrder(Order order);
+}
+
+class PremiumOrderProcessor : OrderProcessor
+{
+    public override void ProcessOrder(Order order)
+    {
+        // code to process premium order
+    }
+}
+
+class RegularOrderProcessor : OrderProcessor
+{
+    public override void ProcessOrder(Order order)
+    {
+        // code to process regular order
+    }
+}

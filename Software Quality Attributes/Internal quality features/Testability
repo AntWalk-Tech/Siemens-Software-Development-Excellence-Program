@@ -1,0 +1,33 @@
+// Bad example
+public class OrderProcessor
+{
+    private readonly OrderRepository _repository;
+
+    public OrderProcessor()
+    {
+        _repository = new OrderRepository();
+    }
+
+    public void ProcessOrder(Order order)
+    {
+        // code to process the order
+        _repository.Save(order);
+    }
+}
+
+// Good example
+public class OrderProcessor
+{
+    private readonly IOrderRepository _repository;
+
+    public OrderProcessor(IOrderRepository repository)
+    {
+        _repository = repository;
+    }
+
+    public void ProcessOrder(Order order)
+    {
+        // code to process the order
+        _repository.Save(order);
+    }
+}

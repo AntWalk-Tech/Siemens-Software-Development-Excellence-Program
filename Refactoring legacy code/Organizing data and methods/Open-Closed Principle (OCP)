@@ -1,0 +1,38 @@
+class OrderProcessor
+{
+    public void ProcessOrder(Order order)
+    {
+        if (order.IsPremium)
+        {
+            // code to process premium order
+        }
+        else
+        {
+            // code to process regular order
+        }
+    }
+}
+
+
+// Refactored
+
+interface IOrderProcessor
+{
+    void ProcessOrder(Order order);
+}
+
+class PremiumOrderProcessor : IOrderProcessor
+{
+    public void ProcessOrder(Order order)
+    {
+        // code to process premium order
+    }
+}
+
+class RegularOrderProcessor : IOrderProcessor
+{
+    public void ProcessOrder(OrderOrder order)
+    {
+        // code to process regular order
+    }
+}

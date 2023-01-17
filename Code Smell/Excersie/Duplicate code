@@ -1,0 +1,15 @@
+void Method1()
+{
+    string name = "John";
+    int age = 25;
+    Console.WriteLine("Name: " + name);
+    Console.WriteLine("Age: " + age);
+}
+
+void Method2()
+{
+    string name = "Mary";
+    int age = 30;
+    Console.WriteLine("Name: " + name);
+    Console.WriteLine("Age: " + age);
+}

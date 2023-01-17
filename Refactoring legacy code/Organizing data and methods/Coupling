@@ -1,0 +1,20 @@
+class OrderProcessor
+{
+    public OrderRepository OrderRepository { get; set; }
+
+    public void ProcessOrder(Order order)
+    {
+        OrderRepository.SaveOrder(order);
+    }
+}
+
+
+// Refectored
+
+class OrderProcessor
+{
+    public void ProcessOrder(Order order, IOrderRepository orderRepository)
+    {
+        orderRepository.SaveOrder(order);
+    }
+}

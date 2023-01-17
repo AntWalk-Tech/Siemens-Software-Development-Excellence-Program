@@ -1,0 +1,17 @@
+// Bad example
+public class OrderProcessor
+{
+    public void processorder(Order order)
+    {
+        // code to process the order
+    }
+}
+
+// Good example
+public class OrderProcessor
+{
+    public void ProcessOrder(Order order)
+    {
+        // code to process the order
+    }
+}

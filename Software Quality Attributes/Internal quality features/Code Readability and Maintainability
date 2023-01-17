@@ -1,0 +1,15 @@
+// Bad example
+string a="";
+foreach(var x in list){
+  if(x>5)a+=x;
+}
+
+// Good example
+string result = "";
+foreach (var item in list)
+{
+    if (item > 5)
+    {
+        result += item;
+    }
+}

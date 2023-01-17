@@ -1,0 +1,35 @@
+class OrderProcessor
+{
+    public int OrderId {get; set;}
+    public string OrderName {get; set;}
+    public decimal Amount {get; set;}
+    public DateTime OrderDate {get; set;}
+    public string OrderDescription {get; set;}
+
+    public void ProcessOrder() { /* code */ }
+    public void ApplyDiscount() { /* code */ }
+    public void SaveOrder() { /* code */ }
+    public void SendEmailConfirmation() { /* code */ }
+}
+
+
+
+// Refactored 
+
+class Order
+{
+    public int OrderId {get; set;}
+    public string OrderName {get; set;}
+    public decimal Amount {get; set;}
+    public DateTime OrderDate {get; set;}
+}
+class OrderDetail
+{
+    public string OrderDescription {get; set;}
+    public void SaveOrder() { /* code */ }
+    public void SendEmailConfirmation() { /* code */ }
+}
+class OrderDiscount
+{
+    public void ApplyDiscount(Order order) { /* code */ }
+}

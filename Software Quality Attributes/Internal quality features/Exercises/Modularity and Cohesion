@@ -1,0 +1,47 @@
+//Exercise: Refactor the following code to make it more Modularity and Cohesion
+
+class A
+{
+    public void ProcessOrder(Order order)
+    {
+        // code to validate the order
+        // code to calculate the total price
+        // code to create the invoice
+        // code to send email confirmation
+    }
+}
+
+
+//Solution
+
+class A
+{
+    private readonly OrderValidator _validator;
+    private readonly OrderTotalCalculator _calculator;
+    private readonly InvoiceCreator _invoiceCreator;
+    private readonly EmailSender _emailSender;
+
+    public A(OrderValidator validator, OrderTotalCalculator calculator, InvoiceCreator invoiceCreator, EmailSender emailSender)
+    {
+        _validator = validator;
+        _calculator = calculator;
+        _invoiceCreator = invoiceCreator;
+        _emailSender = emailSender;
+    }
+
+    public void ProcessOrder(Order order)
+    {
+        if (_validator.Validate(order))
+        {
+            decimal total = _calculator.CalculateTotal(order);
+            _invoiceCreator.CreateInvoice(order, total);
+            _emailSender.SendConfirmation(order);
+        }
+    }
+}
+
+
+//In this example, I've refactored the code to make it more modular and cohesive 
+//by breaking down the single ProcessOrder method into multiple classes, 
+//each responsible for a specific functionality (validation, calculation, invoice creation and email sending).
+// This makes the code more readable, easy to maintain and test, also it increase the cohesion of the code.

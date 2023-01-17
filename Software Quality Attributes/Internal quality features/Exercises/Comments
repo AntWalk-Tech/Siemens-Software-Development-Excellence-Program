@@ -1,0 +1,35 @@
+// Exercise: Add appropriate comments to the following code.
+
+public decimal CalculateTotal(List<OrderItem> items)
+{
+    decimal total = 0;
+    for (int i = 0; i < items.Count; i++)
+    {
+        total += items[i].Price * items[i].Quantity;
+    }
+    return total;
+}
+
+
+// Solution 
+
+/// <summary>
+/// Calculates the total price of a given list of order items
+/// </summary>
+/// <param name="items">List of order items</param>
+/// <returns>Total price</returns>
+public decimal CalculateTotal(List<OrderItem> items)
+{
+    decimal total = 0;
+    for (int i = 0; i < items.Count; i++)
+    {
+        // Adding up the price of each item with its quantity
+        total += items[i].Price * items[i].Quantity;
+    }
+    return total;
+}
+
+//In this example, I've added appropriate comments to the code using XML comments, 
+//providing a summary of what the method does, what it expects as an input and what it returns as output. 
+//This makes the code more readable and understandable for other developers and also helps to understand the code functionality and intent.
+

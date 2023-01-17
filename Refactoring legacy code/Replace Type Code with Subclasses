@@ -1,0 +1,47 @@
+class Employee
+{
+    public int Type { get; set; }
+    public decimal Salary { get; set; }
+
+    public decimal CalculateBonus()
+    {
+        if (Type == 1)
+        {
+            return Salary * 0.1;
+        }
+        else if (Type == 2)
+        {
+            return Salary * 0.2;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+}
+
+
+// Refactored
+
+abstract class Employee
+{
+    public decimal Salary { get; set; }
+
+    public abstract decimal CalculateBonus();
+}
+
+class Manager : Employee
+{
+    public override decimal CalculateBonus()
+    {
+        return Salary * 0.1;
+    }
+}
+
+class SalesPerson : Employee
+{
+    public override decimal CalculateBonus()
+    {
+        return Salary * 0.2;
+    }
+}

@@ -1,0 +1,23 @@
+// Exercise: Refactor the following code to improve its usability
+
+class A
+{
+    public void ProcessOrder(string orderId)
+    {
+        // code to process the order
+    }
+}
+
+
+// Solution
+class A
+{
+    public void ProcessOrder(int orderId)
+    {
+        // code to process the order
+    }
+}
+
+//In this example, I've refactored the code to improve its usability 
+//by using an int as the parameter for the order ID instead of string, 
+//this is a more appropriate data type for an order ID and can be easily validated and handled.

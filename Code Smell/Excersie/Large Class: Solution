@@ -1,0 +1,3 @@
+class OrderValidator
+{
+    public void ValidateOrder() { /* code */ }

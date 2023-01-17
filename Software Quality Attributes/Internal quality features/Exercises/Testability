@@ -1,0 +1,41 @@
+// Exercise: Refactor the following code to make it more testable.
+
+class A
+{
+    private readonly OrderRepository _repository;
+
+    public A()
+    {
+        _repository = new OrderRepository();
+    }
+
+    public void ProcessOrder(Order order)
+    {
+        // code to process the order
+        _repository.Save(order);
+    }
+}
+
+
+// Solution
+
+class A
+{
+    private readonly IOrderRepository _repository;
+
+    public A(IOrderRepository repository)
+    {
+        _repository = repository;
+    }
+
+    public void ProcessOrder(Order order)
+    {
+        // code to process the order
+        _repository.Save(order);
+    }
+}
+
+
+// In this example, I've refactored the code to make it more testable 
+// by injecting the OrderRepository dependency through the constructor, and using an interface IOrderRepository. 
+// This allows for the use of a mock repository during tests and also decouples the code, making it more testable.

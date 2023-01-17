@@ -1,0 +1,42 @@
+class Order
+{
+    public decimal Amount { get; set; }
+    public decimal Tax { get; set; }
+    public decimal Shipping { get; set; }
+    public decimal Total { get; set; }
+}
+
+
+// Refactored
+
+class Order
+{
+    private decimal _amount;
+    private decimal _tax;
+    private decimal _shipping;
+    private decimal _total;
+
+    public decimal Amount
+    {
+        get { return _amount; }
+        set { _amount = value; }
+    }
+
+    public decimal Tax
+    {
+        get { return _tax; }
+        set { _tax = value; }
+    }
+
+    public decimal Shipping
+    {
+        get { return _shipping; }
+        set { _shipping = value; }
+    }
+
+    public decimal Total
+    {
+        get { return _total; }
+        set { _total = value; }
+    }
+}

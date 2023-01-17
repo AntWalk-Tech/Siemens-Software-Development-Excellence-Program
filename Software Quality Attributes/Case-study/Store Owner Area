@@ -1,0 +1,25 @@
+class StoreOwnerArea
+{
+    public void AddProduct(string name, decimal price)
+    {
+        // code to add new product
+    }
+
+    public void UpdateProduct(string productId, string name, decimal price)
+    {
+        // code to update product
+    }
+}
+
+
+//Internal Quality Issues:
+
+//The method names are not descriptive and do not follow naming conventions.
+//The method does not handle the case when the product does not exist.
+//The method does not validate the input parameters.
+
+
+//External Quality Issues:
+
+//The method does not provide feedback to the user in case of an error.
+//The method does not handle the case when the product is already in the inventory.

@@ -1,0 +1,23 @@
+// Bad example
+public class OrderProcessor
+{
+    public void ProcessOrder(string orderId)
+    {
+        // code to process the order
+    }
+}
+
+// Good example
+public class OrderProcessor
+{
+    public void ProcessOrder(int orderId)
+    {
+        // code to process the order
+    }
+}
+
+
+//The bad example uses a string as the parameter for the order ID, 
+//which could lead to issues with data validation and handling. 
+//The good example uses an integer, 
+//which is a more appropriate data type for an order ID and can be easily validated and handled.

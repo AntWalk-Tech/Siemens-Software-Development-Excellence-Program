@@ -1,0 +1,44 @@
+// Exercise: Refactor the following code to improve its reliability
+
+class A
+{
+    public void ProcessOrder(List<OrderItem> items)
+    {
+        decimal total = 0;
+        for (int i = 0; i < items.Count; i++)
+        {
+            total += items[i].Price * items[i].Quantity;
+        }
+        Console.WriteLine(total);
+    }
+}
+
+
+// Solution
+
+class A
+{
+    public void ProcessOrder(List<OrderItem> items)
+    {
+        if (items == null)
+        {
+            throw new ArgumentNullException("items");
+        }
+
+        decimal total = 0;
+        for (int i = 0; i < items.Count; i++)
+        {
+            if (items[i] == null)
+            {
+                throw new ArgumentNullException("items", "Item at index " + i + " is null.");
+            }
+            total += items[i].Price * items[i].Quantity;
+        }
+        Console.WriteLine(total);
+    }
+}
+
+
+//In this example, I've refactored the code to improve its reliability by adding null checks for the list and its items. 
+//This ensures that the application does not crash or produce incorrect results if the items list is null or contains null values. 
+//By throwing ArgumentNullException it will help the developer to understand that the list is null or an item in the list is null.

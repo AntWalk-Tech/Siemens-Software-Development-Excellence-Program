@@ -1,0 +1,46 @@
+class Order
+{
+    public decimal Amount { get; set; }
+    public decimal Tax { get; set; }
+    public decimal Shipping { get; set; }
+    public decimal Total { get; set; }
+
+    public void CalculateTotal() { /* code */ }
+    public void ApplyDiscounts() { /* code */ }
+    public void CalculateTax() { /* code */ }
+    public void CalculateShipping() { /* code */ }
+    public void Save() { /* code */ }
+    public void SendEmailConfirmation() { /* code */ }
+}
+
+
+//Refectored 
+
+class Order
+{
+    public decimal Amount { get; set; }
+
+    public decimal Total { get; set; }
+}
+
+class OrderCalculator
+{
+    public void Calculate(Order order) { /* code */ }
+}
+class OrderDiscount
+{
+    public void ApplyDiscounts(Order order) { /* code */ }
+}
+class OrderTax
+{
+    public void CalculateTax(Order order) { /* code */ }
+}
+class OrderShipping
+{
+    public void CalculateShipping(Order order) { /* code */ }
+}
+class OrderSaver
+{
+    public void Save(Order order) { /* code */ }
+    public void SendEmailConfirmation(Order order) { /* code */ }
+}

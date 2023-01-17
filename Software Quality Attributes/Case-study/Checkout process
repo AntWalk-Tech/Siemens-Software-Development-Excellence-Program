@@ -1,0 +1,19 @@
+class Checkout
+{
+    public void ProcessPayment(string cardNumber, string expDate, string cvv, decimal amount)
+    {
+        // code to process payment
+    }
+}
+
+
+//Internal Quality Issues:
+
+//The method does not validate the input parameters.
+//The method does not handle the case when the payment is not successful.
+
+
+//External Quality Issues:
+
+//The method does not provide feedback to the user in case of an error.
+//The method does not handle

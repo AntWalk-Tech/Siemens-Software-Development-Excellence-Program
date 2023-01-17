@@ -1,0 +1,14 @@
+void Method1()
+{
+    // code A
+    // code B
+}
+
+void Method2()
+{
+    // code A
+    // code B
+}
+
+
+//In this example, the code block A and B are duplicated in both methods, this is considered as a code smell.

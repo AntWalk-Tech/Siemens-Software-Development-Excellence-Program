@@ -1,0 +1,30 @@
+// Bad example
+public class OrderProcessor
+{
+    public void ProcessOrder(Order order)
+    {
+        // code to process the order
+    }
+}
+
+// Good example
+public class OrderProcessor
+{
+    public void ProcessOrder(Order order, bool sendConfirmation)
+    {
+        // code to process the order
+        if (sendConfirmation)
+        {
+            SendConfirmation(order);
+        }
+    }
+
+    private void SendConfirmation(Order order)
+    {
+        // code to send email confirmation
+    }
+}
+
+
+//The bad example processes an order but does not provide the ability to send an email confirmation to the customer. 
+//The good example provides the ability to send an email confirmation as an optional feature by adding a new parameter.

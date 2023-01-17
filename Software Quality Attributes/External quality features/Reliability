@@ -1,0 +1,28 @@
+// Bad example
+public decimal CalculateTotal(List<OrderItem> items)
+{
+    decimal total = 0;
+    for (int i = 0; i < items.Count; i++)
+    {
+        if (items[i] != null)
+        {
+            total += items[i].Price * items[i].Quantity;
+        }
+    }
+    return total;
+}
+
+// Good example
+public decimal CalculateTotal(List<OrderItem> items)
+{
+    decimal total = 0;
+    if (items == null)
+    {
+        throw new ArgumentNullException(nameof(items));
+    }
+   
+//The "Bad example" calculates the total price of a list of order items but doesn't handle the case where the list is null or contains null values. 
+//This can cause the application to crash or produce incorrect results. 
+//The "Good example" checks whether the list is null, and if it is, it throws an ArgumentNullException. 
+//By throwing this exception, the developer can ensure that the list is not null, and that the application will not crash or produce incorrect results. 
+//By handling the exception, the software will be more robust, and it will be able to handle unexpected situations and provide meaningful feedback to the user.

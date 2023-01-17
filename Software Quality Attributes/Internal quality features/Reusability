@@ -1,0 +1,22 @@
+// Bad example
+public class OrderProcessor
+{
+    public void ProcessOrder(Order order)
+    {
+        // code that is specific to this application
+    }
+}
+
+// Good example
+public interface IOrderProcessor
+{
+    void ProcessOrder(Order order);
+}
+
+public class OrderProcessor : IOrderProcessor
+{
+    public void ProcessOrder(Order order)
+    {
+        // code that can be reused in other applications
+    }
+}
