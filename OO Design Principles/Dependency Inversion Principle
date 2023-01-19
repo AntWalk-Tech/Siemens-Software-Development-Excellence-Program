@@ -1,0 +1,37 @@
+interface IPrinter
+{
+    void Print(string content);
+}
+
+class Printer : IPrinter
+{
+    public void Print(string content)
+    {
+        Console.WriteLine(content);
+    }
+}
+
+class Document
+{
+    private readonly IPrinter _printer;
+    public Document(IPrinter printer)
+    {
+        _printer = printer;
+    }
+    public void Print()
+    {
+        _printer.Print("This is the content of the document");
+    }
+}
+
+
+
+
+
+
+
+
+// In this example, the Document class depends on the abstraction IPrinter rather than on a specific implementation of a printer. 
+// This allows the Document class to be decoupled from the specific implementation of the printer and to be easily tested or extended with different implementations.
+// The Printer class implements the IPrinter interface and can be easily swapped out with another implementation of IPrinter without any changes to the Document class.
+// In this way, the high-level module (Document class) does not depend on the low-level module (Printer class), but both depend on the abstraction (IPrinter interface), which allows for more flexible and reusable code.

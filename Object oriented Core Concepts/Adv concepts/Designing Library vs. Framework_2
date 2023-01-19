@@ -7,3 +7,4 @@ public class MyWebApplication : WebApplication
         RouteConfig.RegisterRoutes(RouteTable.Routes);
     }
 }
+
