@@ -1,0 +1,55 @@
+// an object should tell other objects what to do, rather than asking them for their state and making decisions based on that state.
+// In other words, an object should expose methods that allow other objects to change its state and behavior, rather than exposing its internal state and having other objects make decisions based on that state.
+
+class Customer
+{
+    public int Age { get; set; }
+    public bool CanPurchaseAlcohol()
+    {
+        return Age >= 21;
+    }
+}
+class Bar
+{
+    public void ServeDrink(Customer customer)
+    {
+        if (customer.CanPurchaseAlcohol())
+        {
+            // Serve drink
+        }
+        else
+        {
+            // Refuse service
+        }
+    }
+}
+
+
+// In this example, the Bar class is using the CanPurchaseAlcohol method of the Customer class to determine whether or not to serve a drink. This is an example of asking the Customer object for its state, and making a decision based on that state.
+
+
+// A better way to implement this would be to have the Customer object tell the Bar object what to do:
+
+class Customer
+{
+    public int Age { get; set; }
+    public void PurchaseAlcohol()
+    {
+        if (Age < 21)
+        {
+            throw new Exception("Cannot purchase alcohol");
+        }
+    }
+}
+class Bar
+{
+    public void ServeDrink(Customer customer)
+    {
+        customer.PurchaseAlcohol();
+        // Serve drink
+    }
+}
+
+
+// In this refactored version, the Customer object is telling the Bar object what to do through the PurchaseAlcohol method. The 
+// Bar class no longer needs to ask the Customer class for its state and make decisions based on that state.

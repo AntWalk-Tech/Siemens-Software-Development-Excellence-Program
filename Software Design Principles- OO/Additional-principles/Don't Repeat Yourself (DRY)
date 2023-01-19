@@ -1,0 +1,53 @@
+// The Don't Repeat Yourself (DRY) principle is a principle of software development that states that "Every piece of knowledge 
+// must have a single, unambiguous, authoritative representation within a system." In other words, 
+//it is about avoiding duplicate code and information, and instead, having a single, centralized representation of a piece of knowledge.
+
+class Order
+{
+    public double Amount { get; set; }
+    public string Customer { get; set; }
+    public string Product { get; set; }
+    public double Tax()
+    {
+        return Amount * 0.1;
+    }
+    public double Discount()
+    {
+        return Amount * 0.05;
+    }
+    public double Total()
+    {
+        return Amount + Tax() - Discount();
+    }
+}
+
+
+In this example, the Order class has three methods: Tax(), Discount() and Total(). The Total() method calculates the total amount of the order by adding the amount, the tax and subtracting the discount.
+
+The problem with this implementation is that the calculation of the Tax and Discount are repeated in each method, which violates the DRY principle. If we want to change the calculation of Tax or Discount, we need to change it in multiple places, which is error-prone and difficult to maintain.
+
+A better way to implement this would be to have a single, centralized representation of the Tax and Discount calculations:
+
+class Order
+{
+    public double Amount { get; set; }
+    public string Customer { get; set; }
+    public string Product { get; set; }
+    private double _tax = 0.1;
+    private double _discount = 0.05;
+    public double Tax()
+    {
+        return Amount * _tax;
+    }
+    public double Discount()
+    {
+        return Amount * _discount;
+    }
+    public double Total()
+    {
+        return Amount + Tax() - Discount();
+    }
+}
+
+
+In this refactored version, the Tax and Discount calculations are represented by the _tax and _discount properties, which are used in all the methods where they are needed. This way, if we need to change the calculation of Tax or Discount, we only need to change it in one place, which follows the DRY principle and makes the code more maintainable, testable and robust.

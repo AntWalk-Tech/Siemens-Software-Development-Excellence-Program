@@ -1,0 +1,43 @@
+// a class should have one and only one reason to change.
+
+class Order
+{
+    public double Amount { get; set; }
+    public string Customer { get; set; }
+    public string Product { get; set; }
+    public void PlaceOrder() { /* code to place order */ }
+    public void CancelOrder() { /* code to cancel order */ }
+}
+
+
+// In this example, the Order class has multiple responsibilities: it is responsible for storing the order details, placing the order, and canceling the order. If the requirements for placing an order change, the Order class must change. If the requirements for canceling an order change, the Order class must change.
+
+
+
+
+
+
+
+
+
+//To follow the SRP, we can refactor the class by separating the responsibilities into different classes:
+
+class Order
+{
+    public double Amount { get; set; }
+    public string Customer { get; set; }
+    public string Product { get; set; }
+}
+class OrderPlacer
+{
+    public void PlaceOrder(Order order) { /* code to place order */ }
+}
+class OrderCanceler
+{
+    public void CancelOrder(Order order) { /* code to cancel order */ }
+}
+
+// In this refactored version, the Order class now has only one responsibility: storing the order details. 
+// The OrderPlacer class is responsible for placing the order and the OrderCanceler class is responsible for canceling the order. 
+//If the requirements for placing an order change, only the OrderPlacer class must change. 
+// If the requirements for canceling an order change, only the OrderCanceler class must change

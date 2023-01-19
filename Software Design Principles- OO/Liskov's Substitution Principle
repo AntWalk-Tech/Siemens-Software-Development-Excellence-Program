@@ -1,0 +1,68 @@
+// objects of a superclass should be able to be replaced with objects of a subclass without affecting the correctness of the program.
+
+abstract class Shape
+{
+    public abstract double Area();
+}
+
+class Rectangle : Shape
+{
+    public double Width { get; set; }
+    public double Height { get; set; }
+    public override double Area()
+    {
+        return Width * Height;
+    }
+}
+class Square : Rectangle
+{
+    public new double Width
+    {
+        get { return base.Width; }
+        set
+        {
+            base.Width = value;
+            base.Height = value;
+        }
+    }
+    public new double Height
+    {
+        get { return base.Height; }
+        set
+        {
+            base.Width = value;
+            base.Height = value;
+        }
+    }
+}
+
+
+// In this example, the Square class is a subclass of the Rectangle class. 
+// The Square class overrides the Width and Height properties to ensure that they are always equal.
+// It's also important to notice that the Square class has the new keyword in the properties, 
+// which means that it's hiding the base class properties, so if we use a reference of Rectangle to hold a Square object, 
+//it will not access the Width and Height properties of the Square class, which violates the LSP.
+
+
+
+// corrcted example
+
+abstract class Shape
+{
+    public abstract double Area();
+}
+
+class Rectangle : Shape
+{
+    public virtual double Width { get; set; }
+    public virtual double Height { get; set; }
+    public override double Area()
+    {
+        return Width * Height;
+    }
+}
+class Square : Rectangle
+{
+    private double _side;
+    public override double Width
+   

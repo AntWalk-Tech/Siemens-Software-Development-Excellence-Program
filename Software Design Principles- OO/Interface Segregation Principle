@@ -1,0 +1,33 @@
+interface IWorkable
+{
+    void Work();
+}
+
+interface IFeedable
+{
+    void Eat();
+}
+
+class Human : IWorkable, IFeedable
+{
+    public void Work()
+    {
+        // code to work
+    }
+    public void Eat()
+    {
+        // code to eat
+    }
+}
+
+class Robot : IWorkable
+{
+    public void Work()
+    {
+        // code to work
+    }
+}
+
+
+// In this example, the Human class implements both IWorkable and IFeedable interfaces, but the Robot class only implements the IWorkable interface because it doesn't need to eat. 
+//This way, the Robot class is not forced to implement the IFeedable interface and its methods that it doesn't use.
