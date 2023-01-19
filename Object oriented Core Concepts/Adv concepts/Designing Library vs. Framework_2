@@ -1,0 +1,9 @@
+// example of framework 
+
+public class MyWebApplication : WebApplication
+{
+    protected override void Application_Start(object sender, EventArgs e)
+    {
+        RouteConfig.RegisterRoutes(RouteTable.Routes);
+    }
+}

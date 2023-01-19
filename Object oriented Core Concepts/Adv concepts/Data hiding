@@ -1,0 +1,30 @@
+// Data hiding can be achieved by:
+
+// -> Using access modifiers (such as private, protected, internal) to control access to the properties and methods of a class
+// -> Using properties to provide controlled access to internal state
+// -> Using interfaces to define the contract for the public behavior of a class without exposing the internal implementation
+
+
+class BankAccount {
+    private decimal _balance;
+    public decimal Balance {
+        get { return _balance; }
+        set {
+            if (value >= 0) {
+                _balance = value;
+            }
+        }
+    }
+    public void Deposit(decimal amount) {
+        _balance += amount;
+    }
+    public void Withdraw(decimal amount) {
+        if (_balance >= amount) {
+            _balance -= amount;
+        }
+    }
+}
+
+
+// In this example, the internal state of the BankAccount class (the _balance field) is hidden from external classes by making it private. 
+// External classes can access the balance only through the Balance property, which provides controlled access to the internal state.

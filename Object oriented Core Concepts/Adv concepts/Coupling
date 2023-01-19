@@ -1,0 +1,31 @@
+//Coupling can be achieved by:
+
+// -> Using interfaces and abstraction to define the contracts between classes
+// -> Avoiding global variables and singletons
+// -> Using dependency injection to provide external dependencies to a class
+/// -> Using inversion of control (IoC) to control the creation and management of objects
+
+
+
+
+class OrderProcessor {
+    private IShippingProvider _shippingProvider;
+
+    public OrderProcessor(IShippingProvider shippingProvider) {
+        _shippingProvider = shippingProvider;
+    }
+
+    public void ProcessOrder(Order order) {
+        // Process order
+        _shippingProvider.ShipOrder(order);
+    }
+}
+
+
+
+
+
+
+
+//In this example, the OrderProcessor class is loosely coupled with the IShippingProvider interface, which defines the contract for shipping an order. 
+//The OrderProcessor class does not depend on any specific implementation of IShippingProvider, which makes the code more flexible and easier to test.

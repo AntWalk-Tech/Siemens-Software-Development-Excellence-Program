@@ -1,0 +1,8 @@
+//Inheritance is a mechanism that allows one class to inherit properties and methods from another class
+//This allows for code reuse and abstraction
+
+
+class LabradorRetriever : Dog {
+    public int RetrieverScore {get; set;}
+}
+

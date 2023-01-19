@@ -1,0 +1,9 @@
+//An object is an instance of a class
+//An object has its own properties and methods
+
+Dog myDog = new Dog();
+myDog.Name = "Fido";
+myDog.Age = 3;
+myDog.Breed = "Labrador Retriever";
+myDog.Bark();
+
