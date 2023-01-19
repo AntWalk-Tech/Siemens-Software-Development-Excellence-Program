@@ -50,4 +50,3 @@ class Order
 }
 
 
-In this refactored version, the Tax and Discount calculations are represented by the _tax and _discount properties, which are used in all the methods where they are needed. This way, if we need to change the calculation of Tax or Discount, we only need to change it in one place, which follows the DRY principle and makes the code more maintainable, testable and robust.
