@@ -1,0 +1,30 @@
+//Bad:
+
+class Employee
+{
+    public string Name { get; set; }
+
+    public Employee(string name)
+    {
+        Name = name;
+    }
+}
+
+var employee = new Employee("John Doe");
+Console.WriteLine(employee.Name); // Employee name: John Doe
+
+
+//Good:
+
+class Employee
+{
+    public string Name { get; }
+
+    public Employee(string name)
+    {
+        Name = name;
+    }
+}
+
+var employee = new Employee("John Doe");
+Console.WriteLine(employee.Name); // Employee name: John Doe

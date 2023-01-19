@@ -1,0 +1,21 @@
+//Use Camelcase Notation for variable and method paramaters.
+
+//Bad:
+
+var employeephone;
+
+public double CalculateSalary(int workingdays, int workinghours)
+{
+    // some logic
+}
+
+
+
+//Good:
+
+var employeePhone;
+
+public double CalculateSalary(int workingDays, int workingHours)
+{
+    // some logic
+}

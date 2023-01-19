@@ -1,0 +1,11 @@
+//Bad:
+
+GetUserInfo();
+GetUserData();
+GetUserRecord();
+GetUserProfile();
+
+
+//Good:
+
+GetUser();
