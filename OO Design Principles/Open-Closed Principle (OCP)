@@ -1,0 +1,66 @@
+abstract class Shape
+{
+    public abstract double Area();
+}
+
+class Rectangle : Shape
+{
+    private double width;
+    private double height;
+
+    public Rectangle(double width, double height)
+    {
+        this.width = width;
+        this.height = height;
+    }
+
+    public override double Area()
+    {
+        return width * height;
+    }
+}
+
+class Circle : Shape
+{
+    private double radius;
+
+    public Circle(double radius)
+    {
+        this.radius = radius;
+    }
+
+    public override double Area()
+    {
+        return Math.PI * radius * radius;
+    }
+}
+
+
+// In this example, the Shape class is designed to be open for extension by providing an abstract Area method that must be implemented by any derived classes. 
+//The Rectangle and Circle classes extend the Shape class and provide their own implementation of the Area method.
+
+// Now, if we need to add a new shape like a triangle with different area calculation, 
+//we can add a new class called Triangle that extends Shape class and provides its own implementation of the Area method without modifying the existing code.
+
+//
+//
+//
+// Another example is using strategy pattern that is a design pattern that allows a class to change its behavior at runtime by injecting different strategy objects.
+
+interface IPricingStrategy
+{
+    double GetPrice(double rawPrice);
+}
+
+class BulkDiscount : IPricingStrategy
+{
+    public double GetPrice(double rawPrice)
+    {
+        return rawPrice * 0.5;
+    }
+}
+class CouponDiscount : IPricingStrategy
+{
+    public double GetPrice(double rawPrice)
+    {
+        return raw
