@@ -1,0 +1,12 @@
+//Bad:
+
+if (article.state == "published")
+{
+    // ...
+}
+//Good:
+
+if (article.IsPublished())
+{
+    // ...
+}

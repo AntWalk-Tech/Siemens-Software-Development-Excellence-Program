@@ -1,0 +1,16 @@
+//It will take time to investigate the meaning of the variables and functions when they are not pronounceable.
+
+//Bad:
+
+public class Employee
+{
+    public Datetime sWorkDate { get; set; } // what the heck is this
+    public Datetime modTime { get; set; } // same here
+}
+//Good:
+
+public class Employee
+{
+    public Datetime StartWorkingDate { get; set; }
+    public Datetime ModificationTime { get; set; }
+}

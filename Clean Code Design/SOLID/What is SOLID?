@@ -1,0 +1,7 @@
+SOLID is the mnemonic acronym introduced by Michael Feathers for the first five principles named by Robert Martin, which meant five basic principles of object-oriented programming and design.
+
+S: Single Responsibility Principle (SRP)
+O: Open/Closed Principle (OCP)
+L: Liskov Substitution Principle (LSP)
+I: Interface Segregation Principle (ISP)
+D: Dependency Inversion Principle (DIP) 

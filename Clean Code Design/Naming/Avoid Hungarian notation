@@ -1,0 +1,26 @@
+//Hungarian Notation restates the type which is already present in the declaration. This is pointless since modern IDEs will identify the type.
+
+//Bad:
+
+int iCounter;
+string strFullName;
+DateTime dModifiedDate;
+//Good:
+
+int counter;
+string fullName;
+DateTime modifiedDate;
+Hungarian Notation should also not be used in paramaters.
+
+//Bad:
+
+public bool IsShopOpen(string pDay, int pAmount)
+{
+    // some logic
+}
+//Good:
+
+public bool IsShopOpen(string day, int amount)
+{
+    // some logic
+}

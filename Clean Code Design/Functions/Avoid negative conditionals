@@ -1,0 +1,22 @@
+//Bad:
+
+public bool IsDOMNodeNotPresent(string node)
+{
+    // ...
+}
+
+if (!IsDOMNodeNotPresent(node))
+{
+    // ...
+}
+//Good:
+
+public bool IsDOMNodePresent(string node)
+{
+    // ...
+}
+
+if (IsDOMNodePresent(node))
+{
+    // ...
+}

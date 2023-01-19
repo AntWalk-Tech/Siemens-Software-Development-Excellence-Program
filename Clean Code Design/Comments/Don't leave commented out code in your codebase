@@ -1,0 +1,12 @@
+//Version control exists for a reason. Leave old code in your history.
+
+//Bad:
+
+doStuff();
+// doOtherStuff();
+// doSomeMoreStuff();
+// doSoMuchStuff();
+
+//Good:
+
+doStuff();

@@ -1,0 +1,8 @@
+//Name the variable to reflect what it is used for.
+
+//Bad:
+
+var dataFromDb = db.GetFromService().ToList();
+//Good:
+
+var listOfEmployee = _employeeService.GetEmployees().ToList();
