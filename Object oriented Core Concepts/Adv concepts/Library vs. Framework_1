@@ -1,0 +1,27 @@
+// Example of a Library:
+
+
+public class DataValidation
+{
+    public static bool IsValidEmail(string email)
+    {
+        try
+        {
+            var addr = new System.Net.Mail.MailAddress(email);
+            return addr.Address == email;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public static bool IsValidPhoneNumber(string phoneNumber)
+    {
+        Regex phoneCheck = new Regex(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$");
+        if (phoneCheck.IsMatch(phoneNumber))
+            return true;
+        else
+            return false;
+    }
+}

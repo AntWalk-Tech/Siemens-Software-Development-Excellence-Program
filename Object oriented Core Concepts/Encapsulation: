@@ -1,0 +1,24 @@
+//Encapsulation is the process of hiding the internal state and behavior of an object from the outside world
+//It is achieved by using access modifiers (such as private, protected, and internal) to control access to the properties and methods of a class
+//Encapsulation allows for more secure and maintainable code by preventing external classes from modifying the internal state of an object and limiting the amount of code that depends on the internal implementation of a class.
+
+
+class BankAccount {
+    private decimal balance;
+    public decimal Balance {
+        get { return balance; }
+        set {
+            if (value >= 0) {
+                balance = value;
+            }
+        }
+    }
+    public void Deposit(decimal amount) {
+        balance += amount;
+    }
+    public void Withdraw(decimal amount) {
+        if (balance >= amount) {
+            balance -= amount;
+        }
+    }
+}

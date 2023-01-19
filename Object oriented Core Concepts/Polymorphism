@@ -1,0 +1,11 @@
+// Polymorphism is the ability of objects of different classes to be treated as objects of a common base class
+// This allows for more flexible and reusable code
+
+
+List<Dog> dogs = new List<Dog>();
+dogs.Add(new Dog { Name = "Fido", Age = 3, Breed = "Labrador Retriever" });
+dogs.Add(new Dog { Name = "Buddy", Age = 5, Breed = "Golden Retriever" });
+dogs.Add(new Dog { Name = "Max", Age = 7, Breed = "Bulldog" });
+foreach (Dog dog in dogs) {
+    Console.WriteLine(dog.Name);
+}

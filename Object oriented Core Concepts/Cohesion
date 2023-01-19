@@ -1,0 +1,17 @@
+//Cohesion is a measure of how closely the elements of a module or class are related to each other
+//A class or module that has high cohesion has elements that are all related to the same purpose
+//High cohesion is desirable because it makes the code more readable, maintainable, and reusable, as it allows for a clear separation of concerns.
+
+
+class Order {
+    public int OrderId {get; set;}
+    public DateTime OrderDate {get; set;}
+    public List<OrderItem> OrderItems {get; set;}
+    public decimal TotalCost {get; set;}
+    public void Save() {
+        // Save order to database
+    }
+    public void Print() {
+        // Print order details
+    }
+}
