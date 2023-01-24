@@ -1,0 +1,24 @@
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Create a new task
+        var task = Task.Run(() => DoWork());
+
+        // Wait for the task to finish
+        task.Wait();
+
+        Console.WriteLine("Task finished");
+    }
+
+    static void DoWork()
+    {
+        // Do some work
+        Thread.Sleep(2000);
+        Console.WriteLine("Task is working");
+    }
+}
+
+
+// This example demonstrates how to create a new task and start it using the Task.Run method. 
+// The DoWork method will run on a separate thread, and the Main method will wait for it to finish using the Wait method.

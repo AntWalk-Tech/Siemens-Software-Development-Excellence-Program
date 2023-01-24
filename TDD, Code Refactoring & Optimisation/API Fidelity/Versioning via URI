@@ -1,0 +1,16 @@
+<!-- // Versioning via URI: This approach involves including the version number in the URI of the API endpoint. For example, a version 1 endpoint might be accessed at https://example.com/api/v1/users, while a version 2 endpoint might be accessed at https://example.com/api/v2/users. In this way, consumers can continue to use the older version of the API while also taking advantage of new features and improvements in the newer version. -->
+
+    public class UsersController : ApiController
+    {
+        [Route("api/v1/users")]
+        public HttpResponseMessage GetV1()
+        {
+            //Return version 1 of the users
+        }
+
+        [Route("api/v2/users")]
+        public HttpResponseMessage GetV2()
+        {
+            //Return version 2 of the users
+        }
+    }

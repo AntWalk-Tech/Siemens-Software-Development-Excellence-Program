@@ -1,0 +1,38 @@
+class Counter
+{
+    private int _count;
+
+    public void Increment()
+    {
+        // Synchronize access to the count
+        lock (this)
+        {
+            _count++;
+        }
+    }
+
+    public void Decrement()
+    {
+        // Synchronize access to the count
+        lock (this)
+        {
+            _count--;
+        }
+    }
+
+    public int Count
+    {
+        get
+        {
+            // Synchronize access to the count
+            lock (this)
+            {
+                return _count;
+            }
+        }
+    }
+}
+
+
+// This example demonstrates how to use the lock statement to synchronize access to a shared resource, in this case a counter.
+// This ensures that only one thread can access the counter at a time, and prevents race conditions.

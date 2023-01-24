@@ -1,0 +1,42 @@
+class LockA
+{
+    public void DoWork()
+    {
+        lock (this)
+        {
+            // Do some work
+            Thread.Sleep(1000);
+
+            // Acquire lock on another object
+            var lockB = new LockB();
+            lock (lockB)
+            {
+                // Deadlock occurs here because both threads are waiting for each other to release the lock
+            }
+        }
+    }
+}
+
+class LockB
+{
+    public void DoWork()
+    {
+        lock (this)
+        {
+            // Do some work
+            Thread.Sleep(1000);
+
+            // Acquire lock on another object
+            var lockA = new LockA();
+            lock (lockA)
+            {
+                // Deadlock occurs here because both threads are waiting for each other to release the lock
+            }
+        }
+    }
+}
+
+
+// This example demonstrates a simple deadlock scenario where two threads are acquiring locks on each other's objects. 
+// Each thread is waiting for the other thread to release the lock, causing the program to hang. 
+// This can be avoided by using proper lock ordering or by using a different synchronization mechanism such as semaphores or monitors.

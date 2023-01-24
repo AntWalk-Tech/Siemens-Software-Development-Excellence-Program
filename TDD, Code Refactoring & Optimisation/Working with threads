@@ -1,0 +1,25 @@
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Create a new thread
+        var thread = new Thread(DoWork);
+        thread.Start();
+
+        // Wait for the thread to finish
+        thread.Join();
+
+        Console.WriteLine("Thread finished");
+    }
+
+    static void DoWork()
+    {
+        // Do some work
+        Thread.Sleep(2000);
+        Console.WriteLine("Thread is working");
+    }
+}
+
+
+// This example demonstrates how to create a new thread and start it. 
+// The DoWork method will run on a separate thread, and the Main method will wait for it to finish using the Join method.
