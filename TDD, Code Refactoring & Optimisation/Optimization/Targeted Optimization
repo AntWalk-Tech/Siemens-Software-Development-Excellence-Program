@@ -1,0 +1,20 @@
+    //Example of targeted optimization
+    public void ProcessLargeData(List<int> data)
+    {
+        var stopwatch = new Stopwatch();
+        stopwatch.Start();
+        var result = new List<int>();
+        //Process data
+        for (int i = 0; i < data.Count; i++)
+        {
+            if(data[i] > 10)
+            {
+                result.Add(data[i]);
+            }
+        }
+        stopwatch.Stop();
+        Console.WriteLine("Time taken: " + stopwatch.ElapsedMilliseconds);
+        //Identify the bottleneck and analyze it
+        //if data[i] > 10 is taking more time than expected
+        //we can use a hashset to store data > 10 and check whether the current element is in hashset or not
+    }

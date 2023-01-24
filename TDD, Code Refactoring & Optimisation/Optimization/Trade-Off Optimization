@@ -1,0 +1,120 @@
+class ProductCatalog
+{
+    private List<Product> _products = new List<Product>();
+
+    public void AddProduct(Product product)
+    {
+        _products.Add(product);
+        // linear time complexity O(n)
+    }
+
+    public void UpdateProduct(Product product)
+    {
+        // linear time complexity O(n)
+        for (int i = 0; i < _products.Count; i++)
+        {
+            if (_products[i].Id == product.Id)
+            {
+                _products[i] = product;
+                break;
+            }
+        }
+    }
+
+    public Product SearchProduct(string name)
+    {
+        // linear time complexity O(n)
+        for (int i = 0; i < _products.Count; i++)
+        {
+            if (_products[i].Name == name)
+            {
+                return _products[i];
+            }
+        }
+        return null;
+    }
+}
+
+
+// Here, the class ProductCatalog has three methods, AddProduct, UpdateProduct, and SearchProduct. These methods have linear time complexity O(n) which is not efficient for large catalogs.
+
+// To improve the performance of the SearchProduct method, we could use a more efficient search algorithm such as a binary search algorithm. But this would require the data to be sorted which increases the time complexity of adding and updating items.
+
+// To balance this trade-off, we can create a separate thread that runs in the background and keeps the data sorted at all times:
+
+
+class ProductCatalog
+{
+    private List<Product> _products = new List<Product>();
+    private object _lock = new object();
+
+    public ProductCatalog()
+    {
+        new Thread(SortThread).Start();
+    }
+
+    public void AddProduct(Product product)
+    {
+        lock (_lock)
+        {
+            _products.Add(product);
+        }
+    }
+
+    public void UpdateProduct(Product product)
+    {
+        lock (_lock)
+        {
+            for (int i = 0; i < _products.Count; i++)
+            {
+                if (_products[i].Id == product.Id)
+                {
+                    _products[i] = product;
+                    break;
+                }
+            }
+        }
+    }
+
+       public Product SearchProduct(string name)
+    {
+        lock (_lock)
+        {
+            int left = 0;
+            int right = _products.Count - 1;
+            while (left <= right)
+            {
+                int middle = (left + right) / 2;
+                if (_products[middle].Name == name)
+                {
+                    return _products[middle];
+                }
+                else if (string.Compare(_products[middle].Name, name) < 0)
+                {
+                    left = middle + 1;
+                }
+                else
+                {
+                    right = middle - 1;
+                }
+            }
+            return null;
+        }
+    }
+
+// And we can add a method SortThread() to sort the products list in background:
+
+
+    private void SortThread()
+    {
+        while (true)
+        {
+            lock (_lock)
+            {
+                _products.Sort((a, b) => string.Compare(a.Name, b.Name));
+            }
+            Thread.Sleep(5000);
+        }
+    }
+
+// This approach improves the performance of the SearchProduct method while still allowing efficient data management.

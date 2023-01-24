@@ -1,0 +1,9 @@
+// This involves selecting the most efficient algorithm for a specific task. 
+// For example, using a sorting algorithm with a time complexity of O(n log n) instead of one with a time complexity of O(n^2) can greatly improve the performance of a program.
+
+    //Example of using the most efficient algorithm
+    public void SortArray(int[] arr)
+    {
+        //Using quicksort algorithm 
+        Array.Sort(arr);
+    }

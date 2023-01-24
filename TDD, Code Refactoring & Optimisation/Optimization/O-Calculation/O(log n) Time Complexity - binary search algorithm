@@ -1,0 +1,26 @@
+    public int binarySearch(int[] arr, int x)
+    {
+        int left = 0;
+        int right = arr.Length - 1;
+        while (left <= right)
+        {
+            int middle = (left + right) / 2;
+            if (arr[middle] == x)
+            {
+                return middle;
+            }
+            if (arr[middle] < x)
+            {
+                left = middle + 1;
+            }
+            else
+            {
+                right = middle - 1;
+            }
+        }
+        return -1;
+    }
+
+
+// The binary search algorithm has O(log n) time complexity because the running time increases logarithmically with the size of the input data. 
+// The algorithm repeatedly divides the search interval in half, which reduces the size of the search interval by a factor of 2 on each iteration.

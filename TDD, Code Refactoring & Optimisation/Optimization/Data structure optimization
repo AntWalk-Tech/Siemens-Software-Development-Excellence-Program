@@ -1,0 +1,14 @@
+// This involves selecting the most appropriate data structure for a specific task.
+// For example, using a hash table instead of a linked list can greatly improve the performance of a program in certain situations.
+
+    //Example of using the most efficient data structure
+    public void SearchInDictionary(Dictionary<string, int> dict, string key)
+    {
+        //Searching in a hash table is faster than searching in a linked list
+        if (dict.ContainsKey(key))
+        {
+            return dict[key];
+        }
+    }
+
+

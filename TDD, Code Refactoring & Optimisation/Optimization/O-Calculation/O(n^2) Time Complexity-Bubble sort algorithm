@@ -1,0 +1,20 @@
+    public void BubbleSort(int[] arr)
+    {
+        for (int i = 0; i < arr.Length - 1; i++)
+        {
+            for (int j = 0; j < arr.Length - i - 1; j++)
+            {
+                if (arr[j] > arr[j + 1])
+                {
+                    // swap temp and arr[i]
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+
+// The bubble sort algorithm has O(n^2) time complexity because the running time increases with the square of the size of the input data. 
+// The outer loop iterates through the entire array and the inner loop iterates through the array for each iteration of the outer loop.

@@ -1,0 +1,15 @@
+// This involves measuring the performance of a program and identifying bottlenecks. 
+// This can be achieved by using profiling tools such as the Stopwatch class in C# and benchmarking tools such as the PerfomanceCounter class in C#.
+
+
+    //Example of using profiling and benchmarking
+    public void ProcessLargeData(List<int> data)
+    {
+        var stopwatch = new Stopwatch();
+        stopwatch.Start();
+        //Process data
+        stopwatch.Stop();
+        Console.WriteLine("Time taken: " + stopwatch.ElapsedMilliseconds);
+    }
+
+

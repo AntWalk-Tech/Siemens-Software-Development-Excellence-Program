@@ -1,0 +1,10 @@
+// This involves reducing the amount of memory used by a program. 
+// This can be achieved by reusing memory, allocating memory dynamically, or by using data structures that use less memory.
+
+    //Example of reducing memory usage
+    public void ProcessLargeData(List<int> data)
+    {
+        int[] arr = data.ToArray();
+        //Converting list to array can reduce memory usage
+    }
+

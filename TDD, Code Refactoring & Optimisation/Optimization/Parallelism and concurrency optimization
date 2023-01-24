@@ -1,0 +1,11 @@
+// This involves utilizing multiple cores or processors to perform multiple tasks simultaneously. 
+// This can be achieved by using multithreading or by using parallel libraries such as the Parallel class in C#
+
+    //Example of using parallelism to optimize performance
+    public void ProcessLargeData(List<int> data)
+    {
+        Parallel.ForEach(data, item => {
+            //Process item
+        });
+    }
+
