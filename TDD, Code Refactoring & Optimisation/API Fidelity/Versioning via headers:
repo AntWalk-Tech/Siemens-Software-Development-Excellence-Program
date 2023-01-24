@@ -1,4 +1,5 @@
-<!-- This approach involves including the version number in an HTTP header. For example, a consumer might set the api-version header to 1 in order to access the version 1 endpoint, or set it to 2 in order to access the version 2 endpoint. -->
+// This approach involves including the version number in an HTTP header. 
+// For example, a consumer might set the api-version header to 1 in order to access the version 1 endpoint, or set it to 2 in order to access the version 2 endpoint.
 
     public class UsersController : ApiController
     {

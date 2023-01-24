@@ -1,4 +1,6 @@
-<!-- To communicate breaking changes to API consumers, it is important to provide clear and detailed documentation that explains what has changed, and how to migrate to the new version of the API. This documentation should be made available as soon as possible, so that consumers have time to adjust their code accordingly. Additionally, it is also a good practice to provide deprecation warnings for features that will be removed in a future version of the API. -->
+// To communicate breaking changes to API consumers, it is important to provide clear and detailed documentation that explains what has changed, and how to migrate to the new version of the API. 
+// This documentation should be made available as soon as possible, so that consumers have time to adjust their code accordingly. 
+// Additionally, it is also a good practice to provide deprecation warnings for features that will be removed in a future version of the API.
 
 
     public class UsersController : ApiController
@@ -10,3 +12,4 @@
             //Return search results
         }
     }
+
